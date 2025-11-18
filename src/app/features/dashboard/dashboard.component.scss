@@ -1,0 +1,254 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #10513b, #188061);
+  color: var(--text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hero-card h2 {
+  color: var(--text-inverse);
+}
+
+.hero-card .muted {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.4rem;
+}
+
+.hero-badge {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-card header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.stat-card strong {
+  font-size: 1.35rem;
+}
+
+.stat-card.primary {
+  border-color: rgba(23, 163, 133, 0.4);
+}
+
+.stat-card.secondary {
+  border-color: rgba(45, 121, 255, 0.35);
+}
+
+.stat-card.tertiary {
+  border-color: rgba(255, 181, 71, 0.4);
+}
+
+.stat-card.warning {
+  border-color: rgba(247, 110, 110, 0.4);
+}
+
+.delta {
+  font-weight: 600;
+}
+
+.delta.positive {
+  color: var(--primary);
+}
+
+.delta.negative {
+  color: var(--danger);
+}
+
+.split-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.chart-card,
+.meetings-card {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+}
+
+.chart-card header,
+.meetings-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-card button {
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.9rem;
+  background: var(--bg-muted);
+}
+
+.trend-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.trend-row {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.bars {
+  position: relative;
+  height: 10px;
+}
+
+.bar {
+  height: 6px;
+  border-radius: 999px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar.actual {
+  background: var(--primary);
+}
+
+.bar.target {
+  background: rgba(23, 163, 133, 0.2);
+  top: calc(50% + 2px);
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.meetings-card .meeting {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.meetings-card .meeting:last-child {
+  border-bottom: none;
+}
+
+.customer {
+  font-weight: 600;
+}
+
+.opportunity {
+  color: var(--text-muted);
+}
+
+.time {
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+.meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.value {
+  font-weight: 600;
+}
+
+.status {
+  align-self: flex-end;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.status.upcoming {
+  background: rgba(45, 121, 255, 0.12);
+  color: #1b5acd;
+}
+
+.status.done {
+  background: rgba(23, 163, 133, 0.15);
+  color: var(--primary);
+}
+
+.status.pending {
+  background: rgba(255, 181, 71, 0.2);
+  color: #c27902;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.actions-grid article {
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.actions-grid button {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

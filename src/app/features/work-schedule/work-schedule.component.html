@@ -1,0 +1,52 @@
+<section class="work-schedule">
+  <header class="section-header">
+    <div>
+      <h2>Danh sách lịch hẹn</h2>
+      <p>Quản lý công việc, trạng thái xử lý và doanh thu ước tính cho từng lịch hẹn.</p>
+    </div>
+    <div class="actions">
+      <button type="button" class="ghost">Tải template</button>
+      <button type="button" class="primary">Thêm mới lịch hẹn</button>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="filters">
+      <button type="button" *ngFor="let filter of filters" [class.active]="filter === 'Tất cả'">
+        {{ filter }}
+      </button>
+    </div>
+    <label class="search">
+      <span>⌕</span>
+      <input type="search" placeholder="Nhập để tìm kiếm..." />
+    </label>
+  </div>
+
+  <div class="table">
+    <div class="table-row head">
+      <span>Tên lịch hẹn</span>
+      <span>STT</span>
+      <span>Ngày giờ</span>
+      <span>Doanh thu ước tính (đ)</span>
+      <span>Tác vụ</span>
+      <span>Trạng thái</span>
+      <span>Tên KH</span>
+      <span>Tên cơ hội</span>
+      <span>Số điện thoại</span>
+    </div>
+
+    <div class="table-row" *ngFor="let appointment of appointments">
+      <span>{{ appointment.name }}</span>
+      <span>{{ appointment.stt }}</span>
+      <span>{{ appointment.datetime }}</span>
+      <span>{{ appointment.revenue }}</span>
+      <span>{{ appointment.task }}</span>
+      <span>
+        <span class="status" [ngClass]="statusClass(appointment.status)">{{ appointment.status }}</span>
+      </span>
+      <span>{{ appointment.customer }}</span>
+      <span>{{ appointment.opportunity }}</span>
+      <span>{{ appointment.phone }}</span>
+    </div>
+  </div>
+</section>

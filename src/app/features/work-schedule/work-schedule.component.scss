@@ -1,0 +1,145 @@
+.work-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.35rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ghost,
+.primary {
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.ghost {
+  background: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+.primary {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.filters button.active {
+  background: rgba(23, 163, 133, 0.15);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.table {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.4fr 1fr 1.1fr 1fr 0.8fr 1fr 1fr 1fr;
+  padding: 0.85rem 1rem;
+  gap: 0.75rem;
+  align-items: center;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.table-row:nth-child(even):not(.head) {
+  background: var(--bg-muted);
+}
+
+.table-row.head {
+  background: var(--bg-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.status {
+  display: inline-flex;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status.processing {
+  background: rgba(45, 121, 255, 0.15);
+  color: #2457c2;
+}
+
+.status.completed {
+  background: rgba(23, 163, 133, 0.15);
+  color: var(--primary);
+}
+
+.status.pending {
+  background: rgba(255, 181, 71, 0.2);
+  color: #c27902;
+}
+
+@media (max-width: 1200px) {
+  .table-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+
+  .table-row span {
+    display: block;
+  }
+}
+

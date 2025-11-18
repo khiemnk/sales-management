@@ -1,0 +1,165 @@
+.contracts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.breadcrumbs {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.35rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ghost,
+.primary {
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.ghost {
+  border-color: var(--border-color);
+  background: var(--bg-surface);
+}
+
+.primary {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.filters button.active {
+  background: rgba(23, 163, 133, 0.15);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 0.85rem;
+  background: var(--bg-surface);
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.contract-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contract-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chip {
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.chip.active {
+  background: rgba(23, 163, 133, 0.15);
+  color: var(--primary);
+}
+
+.chip.pending {
+  background: rgba(255, 181, 71, 0.2);
+  color: #c27902;
+}
+
+.chip.expired {
+  background: rgba(247, 110, 110, 0.15);
+  color: #c24545;
+}
+
+.contract-card dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.contract-card dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contract-card dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.card-actions button {
+  flex: 1;
+  border-radius: var(--radius-sm);
+  padding: 0.45rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.card-actions .ghost {
+  flex: none;
+}
+

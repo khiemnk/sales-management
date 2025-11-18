@@ -1,0 +1,30 @@
+<aside class="sidebar">
+  <div class="branding">
+    <div class="logo">BIC</div>
+    <div>
+      <p class="app-name">BIC CRM</p>
+      <p class="app-desc">Sale manager</p>
+    </div>
+  </div>
+
+  <div class="nav-group" *ngFor="let group of navGroups">
+    <p class="group-label">{{ group.title }}</p>
+    <a
+      *ngFor="let link of group.links"
+      class="nav-link"
+      [routerLink]="link.route"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: link.route === '/' }"
+    >
+      <span class="dot"></span>
+      <span class="label">{{ link.label }}</span>
+      <span class="badge" *ngIf="link.badge">{{ link.badge }}</span>
+    </a>
+  </div>
+
+  <div class="sidebar-footer">
+    <p class="support-title">Hỗ trợ khách hàng</p>
+    <p class="support-email">support&#64;bic-crm.vn</p>
+    <button type="button">Liên hệ</button>
+  </div>
+</aside>

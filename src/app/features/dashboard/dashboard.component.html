@@ -1,0 +1,80 @@
+<section class="dashboard">
+  <article class="hero-card">
+    <div>
+      <p class="eyebrow">DOANH THU</p>
+      <h2>Doanh thu và mục tiêu trong 12 tháng qua.</h2>
+      <p class="muted">Theo dõi hiệu suất pipeline, tỷ lệ chuyển đổi và doanh thu dự phóng.</p>
+    </div>
+    <div class="hero-badge">
+      <strong>+12%</strong>
+      <span>So với mục tiêu</span>
+    </div>
+  </article>
+
+  <div class="stats-grid">
+    <article class="stat-card" *ngFor="let card of statCards" [ngClass]="card.accent">
+      <header>
+        <p>{{ card.label }}</p>
+        <span class="delta" [ngClass]="{ positive: card.delta >= 0, negative: card.delta < 0 }">
+          {{ card.delta >= 0 ? '+' : '' }}{{ card.delta }}%
+        </span>
+      </header>
+      <strong>{{ card.value }}</strong>
+      <p class="caption">{{ card.caption }}</p>
+    </article>
+  </div>
+
+  <div class="split-grid">
+    <article class="chart-card">
+      <header>
+        <div>
+          <p class="eyebrow">Hiệu suất</p>
+          <h3>Doanh thu & mục tiêu</h3>
+        </div>
+        <button type="button">Xuất dữ liệu</button>
+      </header>
+      <div class="trend-list">
+        <div class="trend-row" *ngFor="let item of trendData">
+          <span class="month">{{ item.month }}</span>
+          <div class="bars">
+            <div class="bar actual" [style.width.%]="(item.revenue / maxRevenue) * 100"></div>
+            <div class="bar target" [style.width.%]="(item.target / maxRevenue) * 100"></div>
+          </div>
+          <div class="values">
+            <span>{{ item.revenue }}tr</span>
+            <small>Mục tiêu: {{ item.target }}tr</small>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="meetings-card">
+      <header>
+        <div>
+          <p class="eyebrow">Cuộc hẹn nổi bật</p>
+          <h3>Lịch làm việc</h3>
+        </div>
+        <a routerLink="/work-schedule">Xem chi tiết</a>
+      </header>
+      <div class="meeting" *ngFor="let meeting of meetings">
+        <div>
+          <p class="customer">{{ meeting.customer }}</p>
+          <p class="opportunity">{{ meeting.opportunity }}</p>
+          <p class="time">{{ meeting.time }}</p>
+        </div>
+        <div class="meta">
+          <span class="value">{{ meeting.value }}</span>
+          <span class="status" [ngClass]="statusClass(meeting.status)">{{ meeting.status }}</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="actions-grid">
+    <article *ngFor="let action of quickActions">
+      <h4>{{ action.label }}</h4>
+      <p>{{ action.description }}</p>
+      <button type="button">Thực hiện</button>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+0 verbose cli /Users/khiemnk/.nvm/versions/node/v18.20.8/bin/node /Users/khiemnk/.nvm/versions/node/v18.20.8/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v18.20.8
+3 silly config load:file:/Users/khiemnk/.nvm/versions/node/v18.20.8/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/khiemnk/Downloads/sale_manager/.npmrc
+5 silly config load:file:/Users/khiemnk/.npmrc
+6 silly config load:file:/Users/khiemnk/.nvm/versions/node/v18.20.8/etc/npmrc
+7 verbose title npm exec @angular/cli@latest new sale-manager --directory . --skip-git
+8 verbose argv "exec" "--" "@angular/cli@latest" "new" "sale-manager" "--directory" "." "--skip-git"
+9 verbose logfile logs-max:10 dir:/Users/khiemnk/Downloads/sale_manager/.npm-cache/_logs/2025-11-17T17_36_57_805Z-
+10 verbose logfile /Users/khiemnk/Downloads/sale_manager/.npm-cache/_logs/2025-11-17T17_36_57_805Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose cwd /Users/khiemnk/Downloads/sale_manager
+13 verbose os Darwin 24.5.0
+14 verbose node v18.20.8
+15 verbose npm  v10.8.2
+16 verbose exit 1
+17 verbose code 1
+18 error A complete log of this run can be found in: /Users/khiemnk/Downloads/sale_manager/.npm-cache/_logs/2025-11-17T17_36_57_805Z-debug-0.log

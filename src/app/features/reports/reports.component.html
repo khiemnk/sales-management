@@ -1,0 +1,61 @@
+<section class="reports">
+  <header class="section-header">
+    <div>
+      <h2>Báo cáo & KPI</h2>
+      <p>Tổng hợp kết quả kinh doanh, so sánh mục tiêu và hiệu suất đội ngũ.</p>
+    </div>
+    <button type="button" class="primary">Xuất báo cáo</button>
+  </header>
+
+  <div class="kpi-grid">
+    <article *ngFor="let kpi of kpis">
+      <p class="label">{{ kpi.label }}</p>
+      <strong>{{ kpi.value }}</strong>
+      <p class="detail">{{ kpi.detail }}</p>
+    </article>
+  </div>
+
+  <div class="report-grid">
+    <article class="chart-card">
+      <header>
+        <h3>Doanh thu theo tháng</h3>
+        <span class="legend">
+          <span class="dot actual"></span>Thực tế
+          <span class="dot target"></span>Mục tiêu
+        </span>
+      </header>
+      <div class="chart-rows">
+        <div class="row" *ngFor="let report of monthlyReports">
+          <span class="month">{{ report.month }}</span>
+          <div class="bars">
+            <div class="bar actual" [style.width.%]="(report.revenue / maxKpi) * 100"></div>
+            <div class="bar target" [style.width.%]="(report.target / maxKpi) * 100"></div>
+          </div>
+          <div class="numbers">
+            <span>{{ report.revenue }}tr</span>
+            <small>Target {{ report.target }}tr</small>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="performers-card">
+      <header>
+        <h3>Top hiệu suất</h3>
+        <span>Tháng 11/2025</span>
+      </header>
+      <div class="performer" *ngFor="let performer of topPerformers">
+        <div>
+          <p class="name">{{ performer.name }}</p>
+          <p class="role">{{ performer.role }}</p>
+        </div>
+        <div class="performance">
+          <strong>{{ performer.revenue }}</strong>
+          <div class="progress">
+            <div class="fill" [style.width.%]="performer.progress"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

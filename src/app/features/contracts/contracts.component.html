@@ -1,0 +1,59 @@
+<section class="contracts">
+  <nav class="breadcrumbs">
+    <span *ngFor="let crumb of breadcrumbs; let last = last">
+      {{ crumb }} <span *ngIf="!last">/</span>
+    </span>
+  </nav>
+
+  <header class="section-header">
+    <div>
+      <h2>Hợp đồng khách hàng abc xyz</h2>
+      <p>Thông tin hợp đồng, trạng thái và người phụ trách.</p>
+    </div>
+    <div class="actions">
+      <button type="button" class="ghost">Xuất Excel</button>
+      <button type="button" class="primary">Tạo hợp đồng</button>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="filters">
+      <button type="button" *ngFor="let filter of filters" [class.active]="filter === 'Tất cả'">
+        {{ filter }}
+      </button>
+    </div>
+    <label class="search">
+      <span>⌕</span>
+      <input type="search" placeholder="Nhập để tìm kiếm..." />
+    </label>
+  </div>
+
+  <div class="cards">
+    <article class="contract-card" *ngFor="let contract of contracts">
+      <header>
+        <p class="code">{{ contract.code }}</p>
+        <span class="chip" [ngClass]="statusClass(contract.status)">{{ contract.status }}</span>
+      </header>
+      <h3>{{ contract.customer }}</h3>
+      <p class="package">{{ contract.package }}</p>
+      <dl>
+        <div>
+          <dt>Giá trị</dt>
+          <dd>{{ contract.value }}</dd>
+        </div>
+        <div>
+          <dt>Ngày ký</dt>
+          <dd>{{ contract.signedDate }}</dd>
+        </div>
+        <div>
+          <dt>Phụ trách</dt>
+          <dd>{{ contract.owner }}</dd>
+        </div>
+      </dl>
+      <div class="card-actions">
+        <button type="button">Xem chi tiết</button>
+        <button type="button" class="ghost">Tải PDF</button>
+      </div>
+    </article>
+  </div>
+</section>

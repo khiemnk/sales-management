@@ -1,0 +1,70 @@
+:root {
+  --bg-muted: #f4f7f6;
+  --bg-surface: #ffffff;
+  --bg-sidebar: #0f4733;
+  --bg-sidebar-accent: #145b43;
+  --border-color: rgba(9, 34, 26, 0.08);
+  --text-main: #1f2a28;
+  --text-muted: #5c6c66;
+  --text-inverse: #f5fbf9;
+  --primary: #17a385;
+  --primary-strong: #0d7a63;
+  --warning: #ffb547;
+  --danger: #f76e6e;
+  --info: #2d79ff;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-muted);
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}

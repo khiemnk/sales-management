@@ -1,0 +1,157 @@
+.reports {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.kpi-grid article {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  padding: 1.1rem;
+}
+
+.kpi-grid strong {
+  font-size: 1.5rem;
+  display: block;
+  margin: 0.3rem 0;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.chart-card,
+.performers-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  padding: 1.2rem;
+}
+
+.chart-card header,
+.performers-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.legend .dot.actual {
+  background: var(--primary);
+}
+
+.legend .dot.target {
+  background: rgba(23, 163, 133, 0.2);
+}
+
+.chart-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.bars {
+  position: relative;
+  height: 12px;
+}
+
+.bar {
+  height: 8px;
+  border-radius: 999px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar.actual {
+  background: var(--primary);
+}
+
+.bar.target {
+  background: rgba(23, 163, 133, 0.25);
+  top: calc(50% + 3px);
+}
+
+.numbers {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.performer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.performer:last-child {
+  border-bottom: none;
+}
+
+.performance {
+  min-width: 180px;
+}
+
+.progress {
+  margin-top: 0.35rem;
+  width: 100%;
+  height: 6px;
+  background: var(--bg-muted);
+  border-radius: 999px;
+}
+
+.fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--primary);
+}
+

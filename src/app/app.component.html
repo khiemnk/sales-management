@@ -1,0 +1,13 @@
+<div class="app-shell">
+  <app-sidebar class="app-sidebar"></app-sidebar>
+  <div class="app-content">
+    <app-topbar
+      [title]="pageTitle"
+      [subtitle]="pageSubtitle"
+      [actionLabel]="pageAction"
+    ></app-topbar>
+    <section class="page-surface">
+      <router-outlet />
+    </section>
+  </div>
+</div>
